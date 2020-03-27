@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Iklan;   
+use Illuminate\Support\Facades\Validator;
 
 class IklanController extends Controller
 {
@@ -73,7 +75,7 @@ class IklanController extends Controller
     			'judul'      => 'required|string|max:255',
 				'harga'		 => 'required|string|max:255',
                 'deskripsi'	 => 'required|string|max:255',
-                'foto'       => 'required',
+                'foto'       => 'required|string',
     		]);
 
     		if($validator->fails()){
@@ -109,7 +111,7 @@ class IklanController extends Controller
                 'judul'      => 'required|string|max:255',
 				'harga'		 => 'required|string|max:255',
                 'deskripsi'	 => 'required|string|max:255',
-                'foto'       => 'required',
+                'foto'       => 'required|string',
             ]);
   
             if($validator->fails()){
